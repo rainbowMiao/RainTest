@@ -8,6 +8,7 @@ if (!process.env.NODE_ENV) {
 var opn = require('opn')
 var path = require('path')
 var express = require('express')
+var chalk = require('chalk')
 var webpack = require('webpack')
 var proxyMiddleware = require('http-proxy-middleware')
 var webpackConfig = require('./webpack.dev.conf')
@@ -25,11 +26,17 @@ var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
-  quiet: true
+  stats: {
+		colors: true,
+    modules: false,
+    children: false,
+    chunks: false,
+    chunkModules: false
+	}
 })
 
 var hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: false,
+  log: () => {},
   heartbeat: 2000
 })
 // force page reload when html-webpack-plugin template changes
@@ -72,15 +79,24 @@ var readyPromise = new Promise(resolve => {
 
 console.log('> Starting dev server...')
 devMiddleware.waitUntilValid(() => {
-  console.log('> Listening at ' + uri + '\n')
-  // when env is testing, don't need open it
+  console.log(chalk`
+
+    {redBright.bold Tip: Listening at ${uri} \`Ctrl+C\` to stop }
+
+  `)
+})
+
+var server = app.listen(port, err => {
+  if (err) {
+		console.log(err)
+		return
+	}
+
   if (autoOpenBrowser && process.env.NODE_ENV !== 'testing') {
     opn(uri)
   }
   _resolve()
 })
-
-var server = app.listen(port)
 
 module.exports = {
   ready: readyPromise,

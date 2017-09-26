@@ -1,0 +1,317 @@
+/**
+ * CSS reset Style
+ *
+ * @author LiuCaiHe at 2017-08-14
+ */
+
+html {
+  line-height: 1;
+  font-size: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -o-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+/**
+ * 如果绝对定位元素，找不到被设置过定位信息的上级元素，那么这个元素就基于根节点定位，所以给`body`设置相对定位，让这些元素基于`body`定位。
+ * 设置网页基本字体颜色为`#666`(深灰色)。
+ * 设置网页背景颜色颜色为`#fff`（纯白色）。
+ * 使字体渲染更顺滑。
+ */
+
+body {
+    // font: 12px 'Helvetica Neue', Arial, 'Hiragino Sans GB', STHeiti, 'STHeiti Light [STXihei]', sans-serif;
+    font-family: 'Helvetica Neue', Arial, Verdana, Sans-serif;
+    color: #666;
+		// max-width: 750px;
+		min-width: 320px;
+		margin: 0 auto !important;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * `table`相邻单元格的边框间的距离设置为0。
+ * 设置`table`的边框为合并模式。
+ */
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/**
+ * 移除浏览器部分元素的默认边框
+ */
+
+img,
+abbr,
+input,
+button,
+acronym,
+fieldset,
+textarea {
+    border: none;
+}
+
+/**
+ * 让`textarea`默认不可以放缩
+ */
+
+textarea {
+    resize: none;
+}
+
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+
+/* 去掉 firefox 下此元素的边框 */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+/* 一致的 del 样式 */
+del {
+  text-decoration: line-through;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* 对齐是排版最重要的因素, 别让什么都居中 */
+caption,
+th {
+  text-align: left;
+}
+
+/* 来自 yahoo, 让标题都自定义, 适应多个系统应用 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: 500;
+}
+q:before,
+q:after {
+  content: '';
+}
+/* 统一上标和下标 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+/**
+ * 以下元素的部分属性没有继承父节点样式，所以声明这些元素的这些属性为父元素的属性。
+ * 取消这些元素的`outline`样式。
+ */
+
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+select,
+button,
+option,
+textarea,
+optgroup {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+    color: inherit;
+    outline: none;
+}
+
+/**
+ * 取消下面元素的默认文字装饰（下划线、中划线）
+ */
+
+a,
+del,
+ins {
+    text-decoration: none;
+}
+
+i {
+    font-style: normal;
+}
+
+/**
+ * 取消ol，ul默认列表样式
+ */
+
+ol,
+ul {
+    list-style: none;
+}
+
+/**
+ * 输入控件的`placeholder`颜色设置为`#999`（浅灰色）
+ */
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #ccc;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #ccc;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #ccc;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #ccc;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+}
+button,
+input {
+  *overflow: visible;
+  line-height: normal;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  // 所有按钮上的游标都是一致的
+  cursor: pointer;
+  // 在iOS中可点击的输入
+  -webkit-appearance: button;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+     -moz-box-sizing: content-box;
+          box-sizing: content-box;
+}
+// 在Chrome OSX，Safari 5中，内部填充问题
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+textarea {
+  // 在ie6-9中删除垂直滚动条
+  overflow: auto;
+  vertical-align: top;
+}
+
+/**
+ * 左右浮动元素
+ */
+.z {
+	float: left;
+}
+.y {
+	float: right;
+}
+
+/**
+ * 避免因子元素浮动而导致父元素高度缺失
+ */
+.clear:after {
+	content: "";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clear {
+	zoom: 1;
+}

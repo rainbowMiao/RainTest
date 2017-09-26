@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <a href="/member">充值页面</a>
     <router-view></router-view>
   </div>
 </template>

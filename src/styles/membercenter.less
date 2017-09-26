@@ -1,0 +1,109 @@
+#MemberCenter{
+  /*提示弹框*/
+  .Errormes {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 18px;
+    z-index: 999999;
+    white-space: nowrap
+  }
+  // 遮罩层
+  .fades-enter-active, .fades-leave-active {
+    transition: opacity .5s
+  }
+  .fades-enter, .fades-leave-active {
+    opacity: 0
+  }
+  .memberTxt{
+    color: rgb(51,51,51);
+    font-size: 16px;
+    padding-left: 5%;
+    margin-top: 15px;
+  }
+  .OilCardLis{
+    width: 100%;
+    height: auto;
+    li{
+      float: left;
+      margin-left: 5%;
+      width: 42.5%;
+      border: 1px solid rgb(27,130,210);
+      border-radius: 10px;
+      height: 65px;
+      overflow: hidden;
+      margin-top: 19.5px;
+      h3{
+        width: 100%;
+        text-align: center;
+        height: 24px;
+        display: block;
+        font-size: 16px;
+        margin-top: 6px;
+        margin-bottom: 4px;
+        color: rgb(27,130,210);
+        span{
+          font-size: 24px;
+        }
+        float: left;
+      }
+      p{
+        width: 100%;
+        text-align: center;
+        display: block;
+        height: 18px;
+        font-size: 14px;
+        margin: 4px auto;
+        color: rgb(27,130,210);
+        span{
+          font-size: 18px;
+        }
+        float: left;
+      }
+    }
+    .bincang{
+      line-height: 65px;
+    }
+    .on{
+      background: rgb(27,130,210);
+      h3{
+        color: #ffffff;
+      }
+      p{
+        color: #ffffff;
+      }
+    }
+  }
+  .memberBtn{
+    border: none;
+    outline: none;
+    display: block;
+    width: 205px;
+    height: 44px;
+    margin: 40px auto;
+    margin-bottom: 28.5px;
+    background: #1b82d2;
+    color: #ffffff;
+    text-align: center;
+    line-height: 44px;
+    font-size: 18px;
+    border-radius: 100px;
+    box-shadow: 0 1px 2px #1b82d2;
+  }
+  .memberfotter{
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    color: rgb(102,102,102);
+    span{
+      color: #1b82d2;
+    }
+  }
+}

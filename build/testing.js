@@ -1,6 +1,6 @@
 require('./check-versions')()
 
-process.env.NODE_ENV = 'production'
+process.env.NODE_ENV = 'testing'
 
 var ora = require('ora')
 var rm = require('rimraf')
@@ -8,9 +8,9 @@ var path = require('path')
 var chalk = require('chalk')
 var webpack = require('webpack')
 var config = require('../config')
-var webpackConfig = require('./webpack.prod.conf')
+var webpackConfig = require('./webpack.testing.conf')
 
-var spinner = ora(chalk`{magenta.bold build for production...}`)
+var spinner = ora(chalk`{blue.bold testing build for production...}`)
 spinner.start()
 
 rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
@@ -26,17 +26,11 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       chunkModules: false
     }) + '\n\n')
 
-    // console.log(chalk.bold.redBright('\n  testing built complete.\n\n'))
-    // console.log(chalk.yellow(
-    //   '  Tip: TESTING built files are meant to be served over an HTTP server.\n' +
-    //   '  Opening index.html over file:// won\'t work.\n'
-    // ))
-
     console.log(chalk`
 
-    {magenta.bold build complete.}
+    {blue.bold testing build complete.}
 
-    {yellow.bold {redBright Tip:} TESTING built files are meant to be served over an HTTP server.
+    {yellow.bold {redBright Tip:} testing built files are meant to be served over an HTTP server.
     Opening index.html over file:// won\'t work.}
 
     `)
